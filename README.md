@@ -1,4 +1,4 @@
-```yaml
+
 # Project Setup and Execution Guide
 
 ## How to Run the Entire Project
@@ -41,4 +41,4 @@ This project is diligently carried out by me.
 
 - **LinkedIn:** [Mohammad Adnaan](https://www.linkedin.com/in/mohammad-adnaan-51272024a/)
 - **GitHub:** [mohd-adnaan](https://github.com/mohd-adnaan)
-```
+
