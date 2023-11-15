@@ -1,0 +1,27 @@
+**1. Image Storage with Quadtree:**
+
+I utilized a Quadtree data structure to store images, particularly binary images. The Quadtree employs a divide-and-conquer strategy by dividing each part of the image into four boxes. Here's how it works:
+
+- If a box contains both black and white pixels, it undergoes further division.
+- If a box contains only one color, it is assigned that pure color.
+- This method of saving images results in significant compression.
+
+An additional advantage of using a Quadtree is the swift identification of overlap between two trees, as pure nodes eliminate the need to explore lower levels. After generating 1000x1000 images, their size ranged from 1-1.2Mb. However, creating a Quadtree, serializing it, and saving it to a text file reduced the size to approximately 20-40Kb.
+
+In the worst-case scenario, where alternate cells are black and form no pure boxes, and all boxes extend to the root, the storage complexity is O(size * size), and the time complexity is also O(size * size) to traverse all boxes.
+
+**2. Test Case Generation:**
+
+I developed a test_case_generator.py file that generates both a standard microscope-clicked image and a dye sensor image.
+
+**3. Program Entrypoint and Exitpoint:**
+
+main.py serves as the entry and exit point for the entire program. Its primary function is to determine whether a parasite exhibits signs of cancer.
+
+**4. Runtime Optimization:**
+
+To enhance runtime execution, I made improvements:
+
+- Instead of recalculating the number of black pixels in the Quad subtree, I implemented a caching mechanism. This idea draws inspiration from converting divide and conquer into a kind of dynamic programming problem, where results are cached and reused.
+  
+- By storing the black pixel count for each box during the deserialization of the serialized string, the runtime significantly decreased from 2*10^-6 to 10^-8.
